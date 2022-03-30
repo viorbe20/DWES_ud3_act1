@@ -13,11 +13,17 @@ $operaciones = ["+", "-", "*", "/"];
 $procesaFormulario = false;
 $message = "";
 $result;
+$userInput = "";
+
+if (isset($_POST['refresh'])) {
+    $procesaFormulario = false;
+}
 
 //Validación formulario
 if (isset($_POST["check"])) {
     //Si el usuario no introduce valor aparece mensaje avisando
-    if (empty($_POST["userInput"])) {
+    //if (empty($_POST["userInput"])) { si pobgo esto considera 0 como vacío
+        if (!isset($_POST["userInput"])) {
         $procesaFormulario = false;
         $message = " Este campo no puede estar vacío.";
     } else {
@@ -51,6 +57,13 @@ if ($procesaFormulario) {
         } else {
             $message = "Incorrecto. El resultado es " . round($result, 2);
         }
+
+        //Mantenemos los valores seleccionados después del submit
+        //$newN1 = $_POST['oldN1'];
+        $n1 = $_POST['oldN1'];
+        $n2 = $_POST['oldN2'];
+        $operaciones[$index] = $_POST['oldSign'];
+        $userInput = $_POST['userInput'];
 }
 
 
@@ -61,10 +74,14 @@ if ($procesaFormulario) {
     <h1>Ejercicio 3</h1>
     <h2>Escribe el resultado de la operación y comprueba.</h2>
     <?php echo "$n1 $operaciones[$index] $n2 = " ?>
-    <input type="number" name="userInput"><span><?php
+    <input type="number" name="userInput" value="<?php echo $userInput?>"><span><?php
                                                 echo $message ?></span>
     <br><br>
-    <button type="submit" name="check">Comprobar</button><br><br>
+    <button type="submit" name="check">Comprobar</button><br>
+    <br>
+    <button type="submit" name="refresh">Refrescar</button><br><br>
+
+
     <input type="hidden" name="oldN1" value="<?php echo $n1?>">
     <input type="hidden" name="oldN2" value="<?php echo $n2?>">
     <input type="hidden" name="oldSign" value="<?php echo $operaciones[$index]?>">
