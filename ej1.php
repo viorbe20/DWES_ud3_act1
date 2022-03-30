@@ -8,8 +8,8 @@ $procesaFormulario = false;
 $n1 = 0;
 $n2 = 0;
 $generatedNumber = "";
-$firstNum = "";
-$lastNum = "";
+$firstNum = 0;
+$lastNum = 0;
 
 //Validación formulario
 if (isset($_POST["generate"])) {
@@ -23,8 +23,8 @@ if (isset($_POST["generate"])) {
 <form action="" method="post">
     <h1>Ejercicio 1</h1>
     <h2>Introduce dos números para generar uno aleatorio comprendido entre esos dos.</h2>
-    <span>Número 1 </span><input type="number" name="n1" value=<?php echo $n1 ?>><br><br>
-    <span>Número 2 </span><input type="number" name="n2" value=<?php echo $n2 ?>><br><br>
+    <span>Número 1 </span><input type="number" name="n1" value=<?php echo $firstNum ?>><br><br>
+    <span>Número 2 </span><input type="number" name="n2" value=<?php echo $lastNum ?>><br><br>
     <button type="submit" name="generate">Generar</button><br><br><span>
         <?php
         echo $generatedNumber ?></span>
