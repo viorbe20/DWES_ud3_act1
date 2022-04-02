@@ -21,7 +21,7 @@ if (isset($_POST["refresh"])) {
 if (isset($_POST["submit"])) {
     //Controlamos que ningún ítem quede sin valorar
     $cont = 0;
-    for ($i = 1; $i < 4; $i++) {
+    for ($i = 1; $i < 7; $i++) {
 
         if (isset($_POST['Item' . $i])) {
             $cont++;
