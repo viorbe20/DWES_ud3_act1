@@ -65,7 +65,7 @@ if ($procesaFormulario) {
     <?php
     for ($i = 1; $i < 7; $i++) {
 
-        echo "<span>Ítem $i: </span>";
+        echo "<label>Ítem $i: </label>";
 
         for ($j = 1; $j < 6; $j++) {
             //Si procesa formulario, mantenemos la puntuación establecida por el usuario
