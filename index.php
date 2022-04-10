@@ -21,12 +21,12 @@ $ejercicios = array (
 
 <h1>Actividades de Repaso (DWES)</h1>
     <h3>Ejercicios sobre Condiciones</h3>
-    <a href="../index.php">Volver al índice de ejercicios</a><br><br>
+    <a href="../../index.php">Volver al índice de ejercicios</a><br><br>
 
     <?php 
     foreach ($ejercicios as $key => $value) {
-        echo '<a target="blank" href="' . $value['enlace'] . '">' . $value['id'] . '.' . $value['titulo'] .'</a>' . '<br>' . $value['descripcion'] . '<br>';
-        echo '<a target="blank" href="' . $value['github'] . '">Enlace Github</a><br><br>';
+        echo '<a target="_blank" href="' . $value['enlace'] . '">' . $value['id'] . '.' . $value['titulo'] .'</a>' . '<br>' . $value['descripcion'] . '<br>';
+        echo '<a target="_blank" href="' . $value['github'] . '">Enlace Github</a><br><br>';
     }
         ?>
 </body>
